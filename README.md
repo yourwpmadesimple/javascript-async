@@ -1,3 +1,4 @@
+![Screenshot](images/javascript-async-image.jpeg)
 # JavaScript Async
 
 ```javascript
