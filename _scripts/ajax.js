@@ -3,8 +3,8 @@ import { successHandler } from "./includes/successHandler.js";
 import { failHandler } from "./includes/failHandler.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  //const apiKey = "082ff726cddf285ae3b74b8f9a32abda"; // ADD YOUR API KEY BETWEEN THE QUOTES
-  const apiKey = "";
+  const apiKey = "082ff726cddf285ae3b74b8f9a32abda"; // ADD YOUR API KEY BETWEEN THE QUOTES
+  //const apiKey = "";
   const url =
     "https://api.openweathermap.org/data/2.5/weather?q=charlotte&APPID=" +
     apiKey;
@@ -15,5 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(function (status) {
       failHandler(status);
+      const weatherDiv = document.querySelector("#weather");
+      weatherDiv.classList.remove("hidden");
+    })
+    .finally(function () {
+      const weatherDiv = document.querySelector("#weather");
+      weatherDiv.classList.remove("hidden");
     });
 });

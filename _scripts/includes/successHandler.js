@@ -22,5 +22,4 @@ export const successHandler = (data) => {
           </p>
       `;
   weatherDiv.innerHTML = weatherFragment;
-  weatherDiv.classList.remove("hidden");
 };
