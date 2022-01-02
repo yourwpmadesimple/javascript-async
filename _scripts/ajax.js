@@ -17,4 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const urls = locations.map(function (location) {
     return `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${apiKey}`;
   });
+
+  (async () => {
+    let responses = [];
+    responses.push(await get(urls[0]));
+    responses.push(await get(urls[1]));
+    responses.push(await get(urls[2]));
+    responses.push(await get(urls[3]));
+    let literals = responses.map((response) => {
+      return successHandler(response);
+    });
+    weatherDiv.innerHTML = `
+    <h1>Weather<./h1>
+    ${literals.join("")}
+    `;
+    weatherDiv.classList.remove("hidden");
+  })();
 });
