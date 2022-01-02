@@ -19,18 +19,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   (async () => {
-    let responses = [];
-    responses.push(await get(urls[0]));
-    responses.push(await get(urls[1]));
-    responses.push(await get(urls[2]));
-    responses.push(await get(urls[3]));
-    let literals = responses.map((response) => {
-      return successHandler(response);
-    });
-    weatherDiv.innerHTML = `
-    <h1>Weather<./h1>
-    ${literals.join("")}
-    `;
-    weatherDiv.classList.remove("hidden");
+    try {
+      let responses = [];
+      responses.push(await get(urls[0]));
+      responses.push(await get(urls[1]));
+      responses.push(await get(urls[2]));
+      responses.push(await get(urls[3]));
+      let literals = responses.map((response) => {
+        return successHandler(response);
+      });
+      weatherDiv.innerHTML = `
+      <h1>Weather<./h1>
+      ${literals.join("")}
+      `;
+      weatherDiv.classList.remove("hidden");
+    } catch (status) {
+      failHandler(status);
+    } finally {
+      weatherDiv.classList.remove("hidden");
+    }
   })();
 });
