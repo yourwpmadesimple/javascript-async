@@ -8,5 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://api.openweathermap.org/data/2.5/weather?q=charlotte&APPID=" +
     apiKey;
   //get(url, successHandler, failHandler);
-  console.log(get(url));
+  get(url).then(function (response) {
+    successHandler(response);
+  });
 });
