@@ -3,8 +3,7 @@ import { tempToF } from "./tempToF.js";
 export const successHandler = (data) => {
   const dataObj = JSON.parse(data);
   const weatherDiv = document.querySelector("#weather");
-  const weatherFragment = `
-          <h1>Weather</h1>
+  const div = `
           <h2 class="top">
           <img
               src="http://openweathermap.org/img/w/${
@@ -21,5 +20,6 @@ export const successHandler = (data) => {
   }
           </p>
       `;
-  weatherDiv.innerHTML = weatherFragment;
+  return div;
+  //weatherDiv.innerHTML = weatherFragment;
 };
