@@ -1,4 +1,4 @@
-import { get } from "./includes/request.js";
+import { get } from "./includes/get.js";
 import { successHandler } from "./includes/successHandler.js";
 import { failHandler } from "./includes/failHandler.js";
 
