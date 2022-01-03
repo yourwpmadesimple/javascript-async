@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 
 /*style sheet for Explore California
 
@@ -196,7 +196,8 @@ span.accent {
   font: normal 2.8em DejaVuSansCond, Arial, sans-serif;
   color: #fff;
   text-shadow: 1px 0px 0px #000;
-  filter: dropshadow(color=#000000, offx=1, offy=0);
+  -webkit-filter: dropshadow(color=#000000, offx=1, offy=0);
+          filter: dropshadow(color=#000000, offx=1, offy=0);
   margin: 70px 0 0 607px;
   letter-spacing: 1px;
 }
@@ -379,8 +380,6 @@ span.accent {
   top: 30px;
   left: auto;
   display: none;
-  -webkit-box-shadow: 2px 2px 5px #333;
-  -moz-box-shadow: 2px 2px 5px #333;
   box-shadow: 2px 2px 5px #333;
   -moz-border-radius-topleft: 0px;
   -moz-border-radius-topright: 0px;
@@ -859,6 +858,75 @@ span.accent {
   display: inline;
   float: none;
 }
+
+#postcardLab {
+  margin: 0;
+  clear: both;
+  font-family: DejaVuSans, Arial, sans-serif;
+}
+#postcardLab #postcardContainer {
+  position: relative;
+}
+#postcardLab #filters {
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+#postcardLab #filters button {
+  background-color: rgba(220,164,100,0.8);
+  border: none;
+  font-size: 1.4em;
+  padding: 20px 40px;
+  margin: 5px;
+  border-radius: 10px;
+}
+#postcardLab #filters #reset {
+  background-color: rgba(36, 177, 36, 0.7);
+  font-weight: bold;
+  border-radius: 0;
+}
+#postcardLab #filters,
+#postcardLab #thumbnails {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+#postcardLab #filters button,
+#postcardLab #thumbnails img {
+  flex: 0 0 auto;
+}
+
+#postcardLab #thumbnails img {
+  margin: 1em 0;
+}
+
+#postcardLab #slider {
+  position: absolute;
+  top: 140px;
+  margin: 20px;
+  font-size: 1.4em;
+  background-color: rgba(255,255,255,0.6);
+  padding: 0.6em;
+}
+
+#postcardLab #slider:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+
+#postcardLab #slider #level {
+  margin: 0 1em 0 0;
+}
+
+#postcardLab #original {
+  display: none;
+}
+
 /* secondaryContent ^5g */
 #secondaryContent #weather img.fallback {
   width: 100%;
